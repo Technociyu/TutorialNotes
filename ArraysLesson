@@ -1,0 +1,62 @@
+﻿using System;
+
+namespace CSharpLessonsRandomVid
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            /* Book Version
+            int[] numbers = { 10, 30, 44, 21, 51, 21, 61, 24, 14 };
+            Array.IndexOf(numbers,21);*/
+
+            /*Video Version*/
+            int[] numbers = new int[5];
+
+            /*
+            numbers[0] = 4; 
+            numbers[1] = 8; 
+            numbers[2] = 15; 
+            numbers[3] = 16; 
+            numbers[4] = 23; 
+            // numbers[5] = 42; 
+
+            //Console.WriteLine(numbers[1]);
+            Console.WriteLine(numbers.Length);
+            Console.ReadLine();
+            _____________________________________________________
+              */
+
+            //int[] numbers = new int[](4, 8, 15, 16, 23, 42);
+
+            //string[] names = new string[] { "Eddie", "Alex", "Michael", "David Lee" };
+
+            /* for (int i = 0; i < names.Length; i++)
+             {
+                 Console.WriteLine(names[i]);
+             }
+             Console.ReadLine();
+             */
+
+            /*
+            foreach (string name in names)
+            {
+                Console.WriteLine(name);
+            }
+            Console.ReadLine(); 
+            */
+
+            string zig = "You can get what you want out of life" + "if you help enough other people to get what you want.";
+
+            char[] charArray = zig.ToCharArray(); 
+            Array.Reverse(charArray);
+
+            foreach (var zigChar in charArray)
+            {
+                Console.WriteLine(zigChar);
+            }
+            Console.ReadLine();
+
+        }
+    }
+}
