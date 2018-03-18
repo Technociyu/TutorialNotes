@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace String
+{
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //string myString ="My \"so-called\" life"; //will print quotation mark with black slash
+            //string myString = "What if I need a\nnew line?" //will print a new line after black slash
+            //string myString = @"Go to your c:\drive" //@ symbol will mark backslash to print without  error
+            //string myString = string.Format("{0:C}", 123.45); //0:C display "$"
+            // string myString = string.Format("{0:N}", 1234567890); //will put number commas in million digits
+            //string myString = string.Format("Percentage: 0:P", .123); //will put in percent
+            //string myString = string.Format("Phone Number {0:(###) ###- ####}", 1234567890); //pound symbol
+
+
+            /* _________ string myString = " That summer we took threes across the board  ";/*
+             //myString = myString.Substring(6, 14); //number prints by the character position from string above
+             // myString = myString.ToUpper(); //will upper case
+             //myString = myString.Replace(" ", "--"); 
+             // myString = myString.Remove(6, 14); //will remove character position words
+
+
+             /*myString = string.Format("Length before: {0} -- Length after: {1}", myString.
+              Length, myString.Trim().Length); //will tell how long string is, then trim off extra spaces and counts how long is it now*/
+            /*_____________________________________________________
+            string myString = "";
+
+            for (int i = 0; i < 100; i++){
+                myString += "--" + i.ToString();
+            }
+            Console.WriteLine(myString);
+            Console.ReadLine();
+            */
+            StringBuilder myString = new StringBuilder();{
+                {
+                myString.Append("--"); //use append for more efficent than above
+                myString.Append(i);
+                }
+
+            Console.WriteLine(myString);
+            Console.ReadLine();
+
+
+        }
+    }
+}
