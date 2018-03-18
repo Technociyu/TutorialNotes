@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DatesandTimes
+{
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            DateTime myValue = DateTime.Now;
+            //Console.WriteLine(myValue.ToString()); prints current time from string
+            //Console.WriteLine(myValue.ToShortDateString()); //prints only date
+            //Console.WriteLine(myValue.ToShortTimeString()); //prints only time
+            //Console.WriteLine(myValue.ToLongDateString); //longer date
+            //Console.WriteLine(myValue.ToLongTimeString);//longer time
+
+            //Console.WriteLine(myValue.AddDays(3).ToLongDateString); // add string to add days
+            //Console.WriteLine(myValue.AddHours(3).ToLongTimeString);
+            //Console.WriteLine(myValue.AddDays(-3).ToLongDateString); //negative to subtract
+
+            //Console.WriteLine(myValue.Month); // prints current month
+
+            //DateTime mBirthday = new DateTime(1969, 12, 7);
+            //Console.WriteLine(myBirthday.ToShortDateString()); //prints date for bday
+
+            DateTime myBirthday = DateTime.Parse("12/7/1969"); //using bday
+            TimeSpan myAge = DateTime.Now.Subtract(myBirthday); //subtracts time now to bday 
+            Console.WriteLine(myAge.TotalDays);//print total days
+
+            Console.ReadLine();
+                   
+          }
+      }
+ }
+
