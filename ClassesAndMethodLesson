@@ -1,0 +1,87 @@
+using System;
+using System.Threading.Tasks;
+using System.Text;
+using System.Linq;
+
+namespace ClassesAndMethods
+{
+    class Program
+    {
+        //STATIC: Static is for giving the "materials" without having to type instances(EX: public car, public name, etc...
+        //Static will give Console., Array., ... etc.
+
+        //myCar, myThirdCar, and myOtherCar are local variables within the class of Car.
+        static void Main(string[] args)
+        {
+            Car myCar = new Car();
+
+            Car.MyMethod(); // "MyMethod has no error since it has a static public at the bottom block of code
+
+            /*
+            myCar.Make = "OldMobile";
+            myCar.Model = "Cutlas Supreme";
+            myCar.Year = 1986;
+            myCar.Color = "Silver";
+            */
+            Car myThirdCar = new Car("Ford", "Escape", 2005, "White");//class constructor
+
+
+            /*
+            Car myOtherCar;
+            myOtherCar = myCar; //created a second method equal to each other so it can both be used.
+
+            Console.WriteLine("{0} {1} {2} {3}",  //my other car has the same objects as Car class
+                              myOtherCar.Make, 
+                              myOtherCar.Model, 
+                              myOtherCar.Year,
+                              myOtherCar.Color);
+
+            myOtherCar.Model = "98";
+
+            Console.WriteLine("{0} {1} {2} {3}",
+                              myCar.Make,
+                              myCar.Model,
+                              myCar.Year,
+                              myCar.Color);
+
+            myOtherCar = null; // remove the class after being run from top to bottom, so you can't use myOtherCar again like the top method
+
+            myCar = null;
+                */
+            Console.ReadLine();
+
+        }
+    }
+
+    class Car
+    {
+        public string Make { get; set; }
+        public string Model { get; set; }
+        public int Year { get; set; }
+        public string Color { get; set; }
+        /*
+        public Car(){
+            //you could load from a configuration file
+            //a database, etc.
+            Make = "Nissan"; //make use for new car class
+        }
+
+        public Car(string make, string model, int year, string color) //parameter
+        //from this code
+        {
+            Make = make;
+            Model = model;
+            Year = year;
+            Color = color;
+        }
+        */
+
+        public static void MyMethod()
+        {
+            Console.WriteLine("Called the static MyMethod");
+            Console.WriteLine(Make);
+
+        }
+
+    }
+}
