@@ -1,0 +1,35 @@
+﻿using System;
+
+namespace ScopeAccessibilityModifiers
+{
+    class Program
+    {
+        private static string k = ""; //private field is a property (still avaliable to members of class)
+
+        static void Main(string[] args)
+        {
+            string j = "";
+            for (int i = 0; i < 10; i++)
+            {
+                j = i.ToString();
+                k = i.ToString();
+                Console.WriteLine(i);
+            }
+            ///Console.WriteLine(i); this cannot work because it is not inside the for loop.
+            Console.ReadLine();
+            Console.WriteLine("Outside of the for: " + j);
+            Console.WriteLine("Outside of the for: " + k);
+
+            HelperMethod();
+
+            Console.ReadLine();
+
+        }
+
+        static void HelperMethod()
+        {
+            Console.WriteLine("Value of k from the HelperMethod(): " + k); //j would not work due to not being private static string accesible
+        }
+
+    }
+}
