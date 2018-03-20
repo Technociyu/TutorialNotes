@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO; //took from the bottom block of code
+using System.Net; //for webclient
+
+namespace NamespaceLessons
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {            //in the bin folder, there's the debug folder which contains additional files provided by visual studio execution
+
+            WebClient client = new WebClient(); //does not have a using system. So that means we have to create a using system for system.net
+            string reply = client.DownloadString("https://msdn.microsoft.com");
+
+            System.Console.WriteLine(reply); //dont have to use system, because we have the "using system;" which gives reference for us
+            //google: site:microsoft.com write to a text file c#
+
+            //If you check this nampespacelesson folder, you'd be able to find write text note
+
+
+            //google: site: microsoft.com c# download html
+
+            // Example #2: Write one string to a text file.
+            //string text = "A class is the most powerful data type in C#. Like a structure, " +
+                           //"a class defines the data and behavior of the data type. ";
+            // WriteAllText creates a file, writes the specified string to the file,
+            // and then closes the file.    You do NOT need to call Flush() or Close().
+            /*System.IO*/
+           
+            File.WriteAllText(@"C:\NamespaceLessons\Public\TestFolder\WriteText.txt", reply);
+            Console.ReadLine();
+        }
+    }
+}
