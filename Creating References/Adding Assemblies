@@ -1,0 +1,121 @@
+
+MYCLASS
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Net;
+using System.IO;
+
+namespace ScrapeLibrary
+{
+    public class Scrape
+    {
+         public string ScrapeWebpage(string url)
+            {
+                return GetWebpage(url);
+            }
+            
+         public string ScrapeWebpage(string url, string filepath)
+            {
+                string reply = GetWebpage(url);
+
+                File.WriteAllText(filepath, reply);
+                return reply;
+            }
+
+         private string GetWebpage(string url)
+            {
+                WebClient client = new WebClient();
+            string content = client.DownloadString(url);
+            content += "That's all folks!!!";
+            return content;
+
+            }
+      }
+________________________________________________________________________________________________
+SCRAPE
+
+using System;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Net;
+using System.IO;
+
+namespace MyCodeLibrary
+{
+    public class Scrape
+    {
+        public string ScrapeWebpage(string url)
+        {
+            return GetWebpage(url);
+        }
+        public string ScrapeWebpage(string url, string filepath) 
+        {
+            string reply = GetWebpage(url);
+
+            File.WriteAllText(filepath, reply);
+            return reply;
+
+        }
+
+        private string GetWebpage(string url)
+        {
+            WebClient client = new WebClient();
+            return client.DownloadString(url);
+            
+        }
+
+    }
+}
+________________________________________________________________________________________________
+SCRAPEWEBPAGE
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MyCodeLibrary;
+//how to add reference (right click on Dependencies and select edit reference and browse. Follow Tabor instruction 
+
+namespace MyClient
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Scrape myScrape = new Scrape();
+            string value =myScrape.ScrapeWebpage("https://msdn.microsoft.com");
+            Console.WriteLine(value);
+            Console.ReadLine();
+        }
+    }
+}
+
+________________________________________________________________________________________________
+FINAL SCRAPE (THEN BUILD/RUN)
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ScrapeLibrary;
+
+namespace ScrapeClient
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Scrape myScrape = new Scrape();
+            string value = myScrape.ScrapeWebpage("https://msdn.microsoft.com");
+            Console.WriteLine(value);
+            Console.ReadLine();        
+        }
+    }
+}
