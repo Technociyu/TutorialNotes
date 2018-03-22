@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Threading.Tasks;
+
+//creating error pages for user to see and fix problem....
+
+namespace HandlingExceptions{
+    class Program
+    {
+        static void Main(string[]args)
+        {
+            try
+            {
+                string content = File.ReadAllText(@"C:\Lesson22\Exampl.txt");
+                Console.WriteLine(content); //this will remove the error program and replaced with catch statment
+            }
+
+            catch(FileNotFoundException ex)
+            {
+             Console.WriteLine("There was a problem");
+                Console.WriteLine("Make sure the name of the tile is named correctly: Example.Txt ");
+            }
+            catch(DirectoryNotFoundException ex)
+            {
+                Console.WriteLine("There was a problem");
+                Console.WriteLine("Make sure the the directiory C:\\Lesson22 exist");           
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("There was a problem");
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                //Code to finalize
+                //Setting object to null
+                //CLosing database connections
+                Console.WriteLine("Closing application now...");
+            }
+            Console.ReadLine();
+        }
+    }
+}
